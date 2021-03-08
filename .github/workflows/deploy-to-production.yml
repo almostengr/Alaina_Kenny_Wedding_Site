@@ -1,0 +1,21 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - name: Deploy to Production
+      uses: fifsky/ssh-action@master
+      with:
+        command: cd && cd weddingweb && git pull origin main
+        host: ${{ secrets.HOSTNAME }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: ${{ secrets.PORT_NUMBER }}
+        user: ${{ secrets.USERNAME }}
