@@ -12576,7 +12576,8 @@ body:not(.device-touch) .tagcloud a {
 	font-weight: bold;
 	text-align: right;
 	text-transform: uppercase;
-	font-family: 'Raleway', sans-serif;
+	/* font-family: 'Raleway', sans-serif; */
+	font-family: 'Crete Round', serif;
 	letter-spacing: 2px;
 }
 
